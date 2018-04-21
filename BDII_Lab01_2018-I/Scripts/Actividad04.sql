@@ -30,3 +30,4 @@ declare @salario as decimal(9,2);
 set @salario = 12000;
 select last_name,salary from employees where salary > @salario;
 go
+/*test*/
