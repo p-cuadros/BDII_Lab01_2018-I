@@ -154,12 +154,14 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="Security\Permissions.sql" />
+    <Build Include="Scripts\Actividad10.sql" />
+    <Build Include="Scripts\Actividad05.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post\CargaDatos.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Actividad01.sql" />
-    <None Include="Scripts\Actividad_09.sql" />
+    <None Include="Scripts\Actividad04.sql" />
   </ItemGroup>
 </Project>
