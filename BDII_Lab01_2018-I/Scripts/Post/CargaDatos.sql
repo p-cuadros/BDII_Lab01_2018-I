@@ -1,29 +1,17 @@
-﻿/*
-Plantilla de script posterior a la implementación							
---------------------------------------------------------------------------------------
- Este archivo contiene instrucciones de SQL que se anexarán al script de compilación.		
- Use la sintaxis de SQLCMD para incluir un archivo en el script posterior a la implementación.			
- Ejemplo:      :r .\miArchivo.sql								
- Use la sintaxis de SQLCMD para hacer referencia a una variable en el script posterior a la implementación.		
- Ejemplo:      :setvar TableName miTabla							
-               SELECT * FROM [$(TableName)]					
---------------------------------------------------------------------------------------
-*/
+﻿SET DATEFORMAT DMY
+GO
+
 INSERT INTO regions VALUES 
         ( 1, 'Europe' )
 		, ( 2, 'Americas' )
 		, ( 3, 'Asia' )
-		, ( 4, 'Middle East and Africa' );
+		, ( 4, 'Middle East and Africa' )
+go
 
 INSERT INTO countries VALUES 
-        ( 'IT'
-        , 'Italy'
-        , 1 
-        ),
-        ( 'JP'
-        , 'Japan'
-	, 3 
-        ),
+        ( 'IT', 'Italy', 1)
+		, ( 'JP', 'Japan', 3)
+		,
         ( 'US'
         , 'United States of America'
         , 2 
@@ -116,7 +104,7 @@ INSERT INTO countries VALUES
         , 'Belgium'
         , 1 
         )
-
+go
 INSERT INTO locations VALUES 
         ( 1000 
         , '1297 Via Cola di Rie'
@@ -279,7 +267,7 @@ INSERT INTO locations VALUES
         , 'Distrito Federal,'
         , 'MX'
         )
-
+go
 --ALTER TABLE departments NOCHECK CONSTRAINT dept_mgr_fk;
 INSERT INTO departments VALUES 
         ( 10
@@ -417,7 +405,7 @@ INSERT INTO departments VALUES
         , NULL
         , 1700
         )
-
+go
 
 INSERT INTO jobs VALUES 
         ( 'AD_PRES'
@@ -515,28 +503,16 @@ INSERT INTO jobs VALUES
         , 4500
         , 10500
         )
-
-
+go
 INSERT INTO employees VALUES 
-        ( 100
-        , 'Steven'
-        , 'King'
-        , 'SKING'
-        , '515.123.4567'
-        , '17-06-2003'
-        , 'AD_PRES'
-        , 24000
-        , NULL
-        , NULL
-        , 90
-        );
+( 100, 'Steven', 'King', 'SKING', '515.123.4567', '17-06-2003', 'AD_PRES', 24000, NULL, NULL, 90);
 INSERT INTO employees VALUES 
         ( 101
         , 'Neena'
         , 'Kochhar'
         , 'NKOCHHAR'
         , '515.123.4568'
-        , '21-09-2005'
+        , '21/09/2005'
         , 'AD_VP'
         , 17000
         , NULL
