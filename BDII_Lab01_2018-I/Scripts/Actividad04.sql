@@ -30,3 +30,24 @@ declare @salario as decimal(9,2);
 set @salario = 12000;
 select last_name,salary from employees where salary > @salario;
 go
+/*11*/
+declare @gerente as int;
+set @gerente = 103;
+select employee_id,last_name,salary,department_id from employees where manager_id = @gerente order by last_name;
+set @gerente = 201;
+select employee_id,last_name,salary,department_id from employees where manager_id = @gerente order by salary;
+set @gerente = 124;
+select employee_id,last_name,salary,department_id from employees where manager_id = @gerente order by employee_id;
+go
+/*12*/
+select last_name from employees where SUBSTRING(last_name,3,1) = 'a';
+go
+/*13*/
+select last_name from employees where SUBSTRING(last_name,3,1) = 'a' or SUBSTRING(last_name,3,1) = 'e';
+go
+/*14*/
+select last_name,job_id,salary from employees where (job_id = 'SA_REP' or job_id = 'ST_CLERK') and (salary = 2500 or salary = 3500 or salary = 7000);
+go
+/*15*/
+select last_name 'Empleado',salary 'Salario Mensual',commission_pct from employees where salary > 5000 and salary < 12000 and (department_id = 20 or department_id = 50) and commission_pct = 0.20;
+go
