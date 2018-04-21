@@ -160,5 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Actividad01.sql" />
+    <None Include="Scripts\actividad_06.sql" />
   </ItemGroup>
 </Project>
