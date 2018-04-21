@@ -65,3 +65,41 @@ JOIN departments as dep
 
 --/////////////////////////////////////////////////////////////////////////////////////////////
 -- 5
+DECLARE @locid INT;
+SET @locid = 1700;
+SELECT emp.last_name,
+	   emp.department_id,
+	   dep.location_id
+	   FROM employees as emp
+JOIN departments as dep
+	ON emp.department_id=dep.department_id
+	WHERE dep.location_id=@locid;
+
+--/////////////////////////////////////////////////////////////////////////////////////////////
+-- 6
+-- conseguir id de empleado que lleven como apellido KING
+SELECT employee_id,
+	   last_name
+	   FROM employees
+	   WHERE last_name='KING';
+-- conseguir id de departamentos que coincidan en manager_id con employee_id
+SELECT dep.department_id
+		FROM departments AS dep
+JOIN (SELECT employee_id,
+			last_name
+			FROM employees
+			WHERE last_name='KING') AS manking
+ON dep.manager_id=manking.employee_id
+
+-- FINALMENTE, apellidos y salarios de empleados que tengan como id de departamento el/los id de departamentos hallados anteriormente
+SELECT emp.last_name,
+	   emp.salary
+	   FROM employees AS emp
+JOIN (SELECT dep.department_id
+			 FROM departments AS dep
+	  JOIN (SELECT employee_id,
+			       last_name
+				   FROM employees
+				   WHERE last_name='KING') AS manking
+	  ON dep.manager_id=manking.employee_id) AS depking
+ON emp.department_id=depking.department_id;
