@@ -157,6 +157,7 @@
     <Build Include="Scripts\Actividad10.sql" />
     <Build Include="Scripts\Actividad05.sql" />
     <Build Include="Scripts\actividad_06.sql" />
+    <Build Include="Scripts\Actividad_09.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post\CargaDatos.sql" />
