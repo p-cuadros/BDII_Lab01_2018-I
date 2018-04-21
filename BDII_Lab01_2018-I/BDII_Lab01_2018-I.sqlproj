@@ -154,10 +154,6 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="Security\Permissions.sql" />
-    <Build Include="Scripts\Actividad10.sql" />
-    <Build Include="Scripts\Actividad05.sql" />
-    <Build Include="Scripts\actividad_06.sql" />
-    <Build Include="Scripts\Actividad_09.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post\CargaDatos.sql" />
@@ -165,5 +161,10 @@
   <ItemGroup>
     <None Include="Scripts\Actividad01.sql" />
     <None Include="Scripts\Actividad04.sql" />
+    <None Include="Scripts\Actividad05.sql" />
+    <None Include="Scripts\Actividad08.sql" />
+    <None Include="Scripts\Actividad10.sql" />
+    <None Include="Scripts\actividad_06.sql" />
+    <None Include="Scripts\Actividad_09.sql" />
   </ItemGroup>
 </Project>
