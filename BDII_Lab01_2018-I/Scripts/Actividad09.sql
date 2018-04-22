@@ -103,3 +103,31 @@ JOIN (SELECT dep.department_id
 				   WHERE last_name='KING') AS manking
 	  ON dep.manager_id=manking.employee_id) AS depking
 ON emp.department_id=depking.department_id;
+
+--/////////////////////////////////////////////////////////////////////////////////////////////
+-- 7
+select * from employees where department_id=90;
+select * from jobs;
+select * from departments where department_name='executive';
+
+-- consiguiendo empleados con nombre de puesto
+SELECT emp.department_id,
+       emp.last_name,
+	   jobs.job_title
+	   FROM employees AS emp
+JOIN jobs
+ON emp.job_id=jobs.job_id;
+
+-- FINALMENTE, empleados con departamento Executive
+SELECT empnomjob.department_id,
+	   empnomjob.last_name,
+	   empnomjob.job_title
+	   FROM departments
+JOIN (SELECT emp.department_id,
+			 emp.last_name,
+			 jobs.job_title
+			 FROM employees AS emp
+	  JOIN jobs
+	  ON emp.job_id=jobs.job_id) AS empnomjob
+ON empnomjob.department_id=departments.department_id
+WHERE department_name='executive'
