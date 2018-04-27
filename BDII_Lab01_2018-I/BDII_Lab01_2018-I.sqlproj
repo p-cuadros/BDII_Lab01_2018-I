@@ -154,6 +154,7 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="Security\Permissions.sql" />
+    <Build Include="Scripts\Actividad09.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post\CargaDatos.sql" />
