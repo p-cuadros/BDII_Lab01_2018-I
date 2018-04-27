@@ -46,6 +46,7 @@ SELECT dbo.LPAD(salary, 15, '$') VALUE
 FROM employees;
 
 	--8
+	--9
 
 
 
