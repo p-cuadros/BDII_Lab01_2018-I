@@ -17,11 +17,32 @@
 
 	--4
 
-	SELECT UPPER(LEFT(last_name,1))+ (LOWER(SUBSTRING(last_name,1,LEN(last_name)))) AS ALEAS FROM employees where last_name like 'J%' OR last_name LIKE 'M%' OR last_name LIKE 'A%' ORDER BY last_name;
+	SELECT UPPER(LEFT(last_name,1))+ (LOWER(SUBSTRING(last_name,1,LEN(last_name)))) AS ALEAS FROM employees where last_name like 'J%' OR last_name LIKE 'M%' OR last_name LIKE 'A%' ORDER BY last_name asc;
  
+ select UPPER(last_name) "Apellido", (LOWER(first_name)) "Longitud" 
+from employees 
+where last_name like 'A%'
+      or last_name like 'J%'
+      or last_name like 'M%' order by last_name asc;
+
+	  --5
+
 
 	--7
-	SELECT last_name, LPAD(salary, 15, '$') SALARY
+  CREATE FUNCTION LPAD
+(
+    @string VARCHAR(MAX), -- Initial string
+    @length INT,          -- Size of final string
+    @pad CHAR             -- Pad character
+)
+RETURNS VARCHAR(MAX)
+AS
+BEGIN
+    RETURN REPLICATE(@pad, @length - LEN(@string)) + @string;
+END
+GO
+
+SELECT dbo.LPAD(salary, 15, '$') VALUE
 FROM employees;
 
 	--8
