@@ -5,7 +5,6 @@
 
 
 
-
 ------2----------------------------------------------
 DECLARE @prom DECIMAL(8,2); 
 SET @prom = (SELECT AVG(salary) FROM employees);
